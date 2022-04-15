@@ -1,17 +1,19 @@
 package com.example.clientcoreapi.service;
 
-import com.example.clientcoreapi.model.ClientModel;
+
+import com.example.clientcoreapi.model.ClientRequest;
+import com.example.clientcoreapi.model.ClientResponse;
 
 import java.util.List;
 
 public interface ClientService {
-    void createClient(ClientModel clientModel);
+    ClientResponse createClient(ClientRequest clientRequest);
 
-    List<ClientModel> getAllClients();
+    ClientResponse updateClient(ClientRequest clientRequest);
 
-    ClientModel getClientById(String clientId);
+    List<ClientResponse> getAllClients();
 
-    void updateClientById(String clientId, ClientModel clientModel);
+    ClientResponse getClientById(String clientId);
 
     void deleteClientById(String clientId);
 }
