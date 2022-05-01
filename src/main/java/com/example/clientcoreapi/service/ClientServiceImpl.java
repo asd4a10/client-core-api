@@ -58,6 +58,7 @@ public class ClientServiceImpl implements ClientService {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
         ClientEntity clientEntity = clientRepository.getClientEntityByClientId(clientId);
+        if (clientEntity==null) return null;
         return modelMapper.map(clientEntity, ClientResponse.class);
     }
 
